@@ -23,7 +23,7 @@ Procedure of generating classifier consists of two main steps:
 ## Vector file composed of positives
 Using Google were collected 25 images that contains tennis balls. Then tennis balls has been cut, cropped to 114x114 pixels and saved to `pos_sample/` directory. Unfortunately, this is not enough to get classifier of great quality, cause there is a need to have at least few hundred of `positives`. Then Ubuntu library `libopencv-dev` comes with help by offering `opencv_createsamples` method that allows to create as many `positives` as we want. Refering to documentation:  
 
-"...The scheme of test samples creation is similar to training  samples  creation  since  each  test  sample  is  a  background  image into which a randomly distorted and randomly scaled  instance of the object picture is pasted at a random position..." [[1]](#1).
+*"...The scheme of test samples creation is similar to training  samples  creation  since  each  test  sample  is  a  background  image into which a randomly distorted and randomly scaled  instance of the object picture is pasted at a random position..."* [[1]](#1).
 
 Using `picture_generatory.py` script 1800 grayscale `negatives` in 200x200 pixels size were collected to `neg/` directory.
 
@@ -55,14 +55,14 @@ for (( i=1; i<=$POS; i++)) do
 	cd ..
 done
 ```
-After executing script above it will be visible directory `all` with 1200 positive images and file `info.lst` which contains information about all images. In first column there is filename, in second amount of tennis balls in this photo, in third and fourth x and y coordinates appropriately and in fifth and sixth height and width in pixels:
+After executing script above it will be visible directory `all` with 1200 positive images and file `info.lst` which contains information about all images. In first column there is filename, number before `|` means from which positive sample, image is created. In second amount of tennis balls in this photo, in third and fourth x and y coordinates appropriately and in fifth and sixth height and width in pixels:
 ```
+1|0001_0056_0026_0080_0080.jpg 1 56 26 80 80
 ...
 25|0042_0066_0024_0080_0080.jpg 1 66 24 80 80
 25|0043_0065_0040_0056_0056.jpg 1 65 40 56 56
 25|0044_0092_0047_0035_0035.jpg 1 92 47 35 35
 25|0045_0017_0132_0037_0037.jpg 1 17 132 37 37
-...
 ```
 That `info.lst` file is consumed by command below and vector file `positives.vec` will be created:
 ```
@@ -70,7 +70,7 @@ opencv_createsamples -info all/info.lst -num $SAMPLES -w $DIM -h $DIM -vec posit
 ```
 In terminal will be visible following output:
 ```
-...
+$...
 $ Create training samples from images collection...
 $ Done. Created 1200 samples
 $ root@vm1:~/home/github/tennis-ball-detector#
