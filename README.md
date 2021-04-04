@@ -3,7 +3,7 @@ Project for detecting tennis ball using OpenCV library and Python.
 
 # Prerequisites
 - `Linux` environment,
-- installed `OpenCV`tools [[2]](#2).
+- installed `OpenCV` tools [[2]](#2).
 - configured `Python` >= 3.6.
 
 # Preconfiguration
