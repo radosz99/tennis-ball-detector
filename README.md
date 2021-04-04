@@ -55,7 +55,7 @@ for (( i=1; i<=$POS; i++)) do
 	cd ..
 done
 ```
-After executing script above it will be visible directory `all` with 1200 positive images and file `info.lst` which contains information about all images. In first column there is filename, number before `|` means from which positive sample, image is created. In second amount of tennis balls in this photo, in third and fourth x and y coordinates appropriately and in fifth and sixth height and width in pixels:
+After executing script above it will be visible directory `all/` with 1200 positive images and file `info.lst` which contains information about all images. In first column there is filename, number before `|` means from which positive sample, image is created. In second amount of tennis balls in this photo, in third and fourth x and y coordinates appropriately and in fifth and sixth height and width in pixels:
 ```
 1|0001_0056_0026_0080_0080.jpg 1 56 26 80 80
 ...
@@ -78,7 +78,7 @@ $ root@vm1:~/home/github/tennis-ball-detector#
 ## Training classifier
 For training classifier also was created bash script (`train.sh`). At the beggining is created `bg.txt` file which contains paths for all `negatives`:
 ```bash
-find neg -iname "*.jpg" > bg.txt
+find neg/ -iname "*.jpg" > bg.txt
 ```
 Content of `bg.txt` look like this:
 ```
