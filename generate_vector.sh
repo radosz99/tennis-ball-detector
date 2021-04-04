@@ -12,7 +12,7 @@ find neg -iname "*.jpg" > bg.txt
 mkdir all
 touch all/info.lst
 
-for (( i=1; i<=$P	OS; i++)) do
+for (( i=1; i<=$POS; i++)) do
 	START=(i-1)*$NEG_PER_POS
 	mkdir net$i
 	for (( j=$START + 1; j<=$START+$NEG_PER_POS; j++)) do
@@ -29,7 +29,6 @@ for (( i=1; i<=$P	OS; i++)) do
 done
 
 rm -rf net*
-echo $SAMPLES
 opencv_createsamples -info all/info.lst -num $SAMPLES -w $DIM -h $DIM -vec positives.vec 
 rm -rf info*
 
