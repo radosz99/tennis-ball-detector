@@ -121,7 +121,7 @@ $ ./train.sh 12 22 0.25
 ```
 For testing classifier quality was created `detector.py` script which takes two arguments - path to directory where images for tennis balls detection are stored and path to classifier:
 ```
-$ python3 detector.py images data/cascade.xml
+$ python3 detector.py images/ data/cascade.xml
 ```
 Directory `results` will be created that contains images from `images` with tennis balls marked in green squares and text files with detail info about detected balls.  
 
@@ -138,8 +138,10 @@ ball_no_2: coords (96, 296), size 71x71
 ball_no_3: coords (629, 279), size 79x79
 ball_no_4: coords (178, 129), size 57x57
 ```
-
-
+You can test classifier from `classifiers/` directory created using parameters `STAGES=12`, `DIM=24`, `FA_RATE=0.25`:
+```
+python detector.py images/ classifiers/cascade_12stages_24dim_0_25far.xml
+```
 
 # References
 <a id="1">[1]</a> 
