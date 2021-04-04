@@ -8,7 +8,6 @@ NEG_PER_POS=72
 NEG_PER_POS_2_3=48
 SAMPLES=1200
 
-find neg -iname "*.jpg" > bg.txt
 mkdir all
 touch all/info.lst
 
