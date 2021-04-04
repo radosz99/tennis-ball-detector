@@ -30,9 +30,32 @@ Using Google were collected 25 images that contains tennis balls. Then tennis ba
 
 Using `picture_generatory.py` script 1800 grayscale `negatives` in 200x200 pixels size were collected to `neg/` directory.
 
+To automatize process of generating `positives` bash script was written:
+
+
 ```bash
 $ pwd
 
+```
+
+```
+...
+25|0042_0066_0024_0080_0080.jpg 1 66 24 80 80
+25|0043_0065_0040_0056_0056.jpg 1 65 40 56 56
+25|0044_0092_0047_0035_0035.jpg 1 92 47 35 35
+25|0045_0017_0132_0037_0037.jpg 1 17 132 37 37
+...
+```
+
+
+## Training classifier
+```
+...
+neg/404.jpg
+neg/1727.jpg
+neg/1202.jpg
+neg/1359.jpg
+...
 ```
 
 # References
