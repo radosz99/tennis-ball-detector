@@ -1,18 +1,13 @@
 #!/bin/bash
 
-STAGES=$1
-DIM=$2
-FA_RATE=$3
+DIM=$1
 
 POS=25
 NEG=1800
 NEG_PER_POS=72
 NEG_PER_POS_2_3=48
 SAMPLES=1200
-NUM_POS=800
-NUM_NEG=400
 
-rm -rf data
 find neg -iname "*.jpg" > bg.txt
 mkdir all
 touch all/info.lst
@@ -37,11 +32,6 @@ rm -rf net*
 echo $SAMPLES
 opencv_createsamples -info all/info.lst -num $SAMPLES -w $DIM -h $DIM -vec positives.vec 
 rm -rf info*
-mkdir data
-opencv_traincascade -data data -vec positives.vec -bg bg.txt -numPos $NUM_POS -numNeg $NUM_NEG -numStages $STAGES -w $DIM -h $DIM -maxFalseAlarmRate  $FA_RATE
-rm -rf all
-rm positives.vec
-rm bg.txt
 
 
 
