@@ -77,7 +77,7 @@ $ root@vm1:~/home/github/tennis-ball-detector#
 ```
 ## Training classifier
 For training classifier also was created bash script (`train.sh`). At the beggining is created `bg.txt` file which contains paths for all `negatives`:
-```
+```bash
 find neg -iname "*.jpg" > bg.txt
 ```
 Content of `bg.txt` look like this:
@@ -90,7 +90,7 @@ neg/1359.jpg
 ...
 ```
 Next few variables are defined, `data/` folder is created and proper training is taking place using `opencv_traincascade` commmand:
-```
+```bash
 STAGES=$1  # amount of training stages
 DIM=$2  # same as in generate_vector.sh script
 FA_RATE=$3  # false alarm rate, the smaller the longer training process will be and classifier will be beter 
@@ -126,6 +126,9 @@ $ python3 detector.py images data/cascade.xml
 Directory `results` will be created that contains images from `images` with tennis balls marked in green squares and text files with detail info about detected balls.  
 
 Image:
+<p align="center">
+  <img src="https://github.com/radosz99/tennis-ball-detector/blob/main/results/8.jpg" width=60% alt="Img"/> 
+</p> 
 
 Text file:
 ```
