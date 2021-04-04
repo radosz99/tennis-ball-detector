@@ -6,11 +6,11 @@ FA_RATE=$3
 
 POS=25
 NEG=1800
-NEG_PER_POS=$NEG/$POS
-NEG_PER_POS_2_3=$NEG_PER_POS*2/3
-SAMPLES=$POS*$NEG_PER_POS_2_3
-$NUM_POS=$SAMPLES*3/4
-$NUM_NEG=$NUMPOS/2
+NEG_PER_POS=72
+NEG_PER_POS_2_3=48
+SAMPLES=1200
+NUM_POS=800
+NUM_NEG=400
 
 rm -rf data
 find neg -iname "*.jpg" > bg.txt
@@ -29,11 +29,12 @@ for (( i=1; i<=$POS; i++)) do
 	cd info$i
 	for file in *.jpg; do
 		mv "$file" "../all/$i|$file"
-	done	
+	done
 	cd ..
 done
 
 rm -rf net*
+echo $SAMPLES
 opencv_createsamples -info all/info.lst -num $SAMPLES -w $DIM -h $DIM -vec positives.vec 
 rm -rf info*
 mkdir data
