@@ -3,7 +3,7 @@ Project for detecting tennis ball using OpenCV library and Python.
 
 # Prerequisites
 - `Linux` environment,
-- installed `OpenCV` >= 2.4 ([tutorial](https://pythonprogramming.net/haar-cascade-object-detection-python-opencv-tutorial/)),
+- installed `OpenCV`tools [[2]](#2).
 - configured `Python` >= 3.6.
 
 # Preconfiguration
@@ -145,3 +145,7 @@ ball_no_4: coords (178, 129), size 57x57
 <a id="1">[1]</a> 
 `libopencv-dev` Ubuntu documentation
 http://manpages.ubuntu.com/manpages/xenial/man1/opencv_createsamples.1.html
+
+<a id="2">[2]</a> 
+Creating your own Haar Cascade OpenCV Python Tutorial
+https://pythonprogramming.net/haar-cascade-object-detection-python-opencv-tutorial/
