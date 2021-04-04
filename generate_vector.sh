@@ -30,6 +30,7 @@ done
 rm -rf net*
 opencv_createsamples -info all/info.lst -num $SAMPLES -w $DIM -h $DIM -vec positives.vec 
 rm -rf info*
+rm -rf all
 
 
 
